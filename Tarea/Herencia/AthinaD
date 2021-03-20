@@ -1,0 +1,189 @@
+import java.util.*;
+
+class inmueblesCore{
+    String fecha_adquicion, numero_lote,ultimo_dueno,numero_registro;
+    public void set_fecha_adquicion(String a){
+      fecha_adquicion = a;
+    }
+    public String get_fecha_adquicion(){
+      return fecha_adquicion;
+    }
+    public void set_numero_lote(String a){
+      numero_lote = a;
+    }
+    public String get_numero_lote(){
+      return fecha_adquicion;
+    }
+    public void set_ultimo_dueno(String a){
+      ultimo_dueno = a;
+    }
+    public String get_ultimo_dueno(){
+      return ultimo_dueno;
+    }
+    public void set_numero_registro(String a){
+      numero_registro = a;
+    }
+    public String get_numero_registro(){
+      return numero_registro;
+    }
+    public void print(){
+      System.out.println("Fecha Adquision: "+fecha_adquicion);
+      System.out.println("Numero Lote: "+numero_lote);
+      System.out.println("Ultimo Dueno: "+ultimo_dueno);
+      System.out.println("Numero Registro: "+numero_registro);
+    }
+}
+class localesComerciales extends inmueblesCore{
+    String fecha_construccion, fecha_inspeccion;
+    public void set_fecha_construccion(String a){
+      fecha_construccion = a;
+    }
+    public String get_fecha_construccion(){
+      return fecha_construccion;
+    }
+    public void set_fecha_inspeccion(String a){
+      fecha_inspeccion = a;
+    }
+    public String get_fecha_inspeccion(){
+      return fecha_inspeccion;
+    }
+    public void print(){
+      super.print();
+      System.out.println("Fecha Construccion: "+fecha_construccion);
+      System.out.println("Fecha Inspeccion: "+fecha_inspeccion);
+    }
+}
+class departamentos extends inmueblesCore{
+    String numero_habitaciones, numero_banos, numero_amenidades;
+    public void set_numero_habitaciones(String a){
+      numero_habitaciones = a;
+    }
+    public String get_numero_habitaciones(){
+      return numero_habitaciones;
+    }
+    public void set_numero_banos(String a){
+      numero_banos = a;
+    }
+    public String get_numero_banos(){
+      return numero_banos;
+    }
+    public void set_numero_amenidades(String a){
+      numero_amenidades = a;
+    }
+    public String get_numero_amenidades(){
+      return numero_amenidades;
+    }
+    public void print(){
+      super.print();
+      System.out.println("Numero habitaciones: "+numero_habitaciones);
+      System.out.println("Numero Banos: "+numero_banos);
+      System.out.println("Numero Amenidades: "+numero_amenidades);
+    }
+}
+class terrenos extends inmueblesCore{
+    String numero_metros_cuadrados, ubicacion;
+    public void set_numero_metros_cuadrados(String a){
+      numero_metros_cuadrados = a;
+    }
+    public String get_numero_metros_cuadrados(){
+      return numero_metros_cuadrados;
+    }
+    public void set_ubicacion(String a){
+      ubicacion = a;
+    }
+    public String get_ubicacion(){
+      return ubicacion;
+    }
+    public void print(){
+      super.print();
+      System.out.println("Metros cuadrados: "+numero_metros_cuadrados);
+      System.out.println("Ubicacion: "+ubicacion);
+    }
+}
+class inmuebles {
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      // Declaracion de las clase como arreglo de objetos
+      localesComerciales obj_localesComerciales[] = new localesComerciales[2];
+      for (int i = 0; i < obj_localesComerciales.length; i++) {
+        obj_localesComerciales[i] = new localesComerciales();
+      }
+      departamentos obj_departamentos[] = new departamentos[3];
+      for (int i = 0; i < obj_departamentos.length; i++) {
+        obj_departamentos[i] = new departamentos();
+      }
+      terrenos obj_terrenos[] = new terrenos[5];
+      for (int i = 0; i < obj_terrenos.length; i++) {
+        obj_terrenos[i] = new terrenos();
+      }
+      System.out.println("\u001B[32m########  Locales Comerciales ########");
+      // Llenamos la informacion  de los 2 terrenos
+      for (int i = 0; i < obj_localesComerciales.length; i++) {
+        System.out.println("\u001B[0m ## Locales Comerciales "+i+" ##");
+        System.out.println("Ingrese la fecha de Adquicion:");
+        obj_localesComerciales[i].set_fecha_adquicion(sc.nextLine());
+        System.out.println("Ingrese el numero de lote:");
+        obj_localesComerciales[i].set_numero_lote(sc.nextLine());
+        System.out.println("Ingrese nombre del ultimo dueno:");
+        obj_localesComerciales[i].set_ultimo_dueno(sc.nextLine());
+        System.out.println("Ingrese el numero de registro:");
+        obj_localesComerciales[i].set_numero_registro(sc.nextLine());
+        System.out.println("Ingrese la fecha de construccion:");
+        obj_localesComerciales[i].set_fecha_construccion(sc.nextLine());
+        System.out.println("Ingrese la fecha de  inspeccion:");
+        obj_localesComerciales[i].set_numero_registro(sc.nextLine());
+      }
+      System.out.println("\u001B[32m########  Departamentos ########");
+      // Llenamos la informacion  de los 3 apartamentos
+      for (int i = 0; i < obj_departamentos.length; i++) {
+        System.out.println("\u001B[0m ## Departamento "+i+" ##");
+        System.out.println("Ingrese la fecha de Adquicion:");
+        obj_departamentos[i].set_fecha_adquicion(sc.nextLine());
+        System.out.println("Ingrese el numero de lote:");
+        obj_departamentos[i].set_numero_lote(sc.nextLine());
+        System.out.println("Ingrese nombre del ultimo dueno:");
+        obj_departamentos[i].set_ultimo_dueno(sc.nextLine());
+        System.out.println("Ingrese el numero de registro:");
+        obj_departamentos[i].set_numero_registro(sc.nextLine());
+        System.out.println("Ingrese el numero de habitaciones:");
+        obj_departamentos[i].set_numero_habitaciones(sc.nextLine());
+        System.out.println("Ingrese el numero de banos:");
+        obj_departamentos[i].set_numero_banos(sc.nextLine());
+        System.out.println("Ingrese el numero de amenidades:");
+        obj_departamentos[i].set_numero_amenidades(sc.nextLine());
+      }
+      System.out.println("\u001B[32m########  Terrenos ########");
+      // Llenamos la informacion  de los 5 terrenos
+      for (int i = 0; i < obj_terrenos.length; i++) {
+        System.out.println("\u001B[0m ## Terrenos "+i+" ##");
+        System.out.println("Ingrese la fecha de Adquicion:");
+        obj_terrenos[i].set_fecha_adquicion(sc.nextLine());
+        System.out.println("Ingrese el numero de lote:");
+        obj_terrenos[i].set_numero_lote(sc.nextLine());
+        System.out.println("Ingrese nombre del ultimo dueno:");
+        obj_terrenos[i].set_ultimo_dueno(sc.nextLine());
+        System.out.println("Ingrese el numero de registro:");
+        obj_terrenos[i].set_numero_registro(sc.nextLine());
+        System.out.println("Ingrese el numero de metros cuadrados:");
+        obj_terrenos[i].set_numero_metros_cuadrados(sc.nextLine());
+        System.out.println("Ingrese la ubicacion:");
+        obj_terrenos[i].set_ubicacion(sc.nextLine());
+      }
+      System.out.println("\u001B[32m######## Resultado Locales Comerciales ########");
+      for (int i = 0; i < obj_localesComerciales.length; i++) {
+          System.out.println("\u001B[0m ## Locales Comerciales "+i+" ##");
+          obj_localesComerciales[i].print();
+      }
+      System.out.println("\u001B[32m######## Resultado Departamentos ########");
+      for (int i = 0; i < obj_departamentos.length; i++) {
+          System.out.println("\u001B[0m ## Departamentos "+i+" ##");
+          obj_departamentos[i].print();
+      }
+      System.out.println("\u001B[32m######## Resultado Terrenos ########");
+      for (int i = 0; i < obj_terrenos.length; i++) {
+          System.out.println("\u001B[0m ## Terrenos "+i+" ##");
+          obj_terrenos[i].print();
+      }
+    }
+}
